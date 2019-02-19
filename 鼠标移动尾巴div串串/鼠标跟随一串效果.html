@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>无标题文档</title>
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<style type="text/css">
+
+		div{width:10px; height:10px; position:absolute; top:0; left:0;}
+		div::after{
+			font-family: fontawesome;
+			content:"\f06c";
+			font-size: 18px;
+			color:green;
+		}
+		</style>
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+
+<body>
+	<div id="box" style="left: 341px; top: 172px;"></div>
+	<div style="top: 172px; left: 341px;"></div>  
+	<div style="top: 69px; left: 272px;"></div>    
+	<div style="top: 69px; left: 272px;"></div>     
+	<div style="top: 69px; left: 272px;"></div>
+	<div style="top: 75px; left: 275px;"></div>
+	<div style="top: 77px; left: 278px;"></div>
+	<div style="top: 81px; left: 281px;"></div>
+	<div style="top: 83px; left: 284px;"></div>
+	<div style="top: 86px; left: 291px;"></div>
+	<div style="top: 86px; left: 299px;"></div>
+	<div style="top: 89px; left: 309px;"></div>
+	<div style="top: 89px; left: 325px;"></div>
+	<div style="top: 89px; left: 339px;"></div>
+	<div style="top: 89px; left: 358px;"></div>
+	<div style="top: 86px; left: 380px;"></div>
+	<div style="top: 84px; left: 399px;"></div>
+	<div style="top: 80px; left: 427px;"></div>
+	<div style="top: 78px; left: 451px;"></div>   
+	<div style="top: 75px; left: 506px;"></div>   
+	<div style="top: 75px; left: 530px;"></div>   
+</body></html>
+<script type="text/javascript">
+	
+	
+	//var box = document.getElementById("box");
+	var div = document.getElementsByTagName("div");
+	
+	document.onmousemove = function(e){
+		var e = e || event;
+		var x = e.clientX;
+		var y = e.clientY;
+		/*box.style.top = y + "px";
+		box.style.left = x + "px";*/
+		
+		/*for (var i = 0; i < div.length; i++) {
+			div[i].style.top = y + "px";
+			div[i].style.left = x + "px";
+		}*/
+		div[0].style.top = y + "px";
+		div[0].style.left = x + "px";
+		
+		for (var i = div.length-1; i > 0; i--) {
+			div[i].style.left = div[i-1].style.left;
+			div[i].style.top = div[i-1].style.top;
+		}
+		
+	}
+	
+	
+</script>
